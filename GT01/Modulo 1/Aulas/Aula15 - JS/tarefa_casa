@@ -1,0 +1,7 @@
+Receba dois nomes via prompt e mostre uma mensagem de bem-vindo.
+Peça ao usuário um número e mostre o dobro desse número
+peça ao usuário seu nome e idade, e mostre uma mensagem exibindo o nome e a idade recebidos.
+peça ao usuário dois números e mostre a soma, subtração, multiplicação e a divisão entre eles.
+Peça para o usuário digitar a largura e  o comprimento de um terreno e mostre uma mensagem com a área. Área = largura * comprimento.
+Peça para o usuário digitar uma quantidade de dias e mostre quantos minutos representa essa quantidade de dias
+Peça faça um programa que receba os coeficientes a, b e c de uma equação do 2 grau e encontre as raizes.
