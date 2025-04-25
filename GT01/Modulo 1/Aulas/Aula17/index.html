@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <title>Aula 17</title>
+  </head>
+  <script>
+    // let nota1 = Number(prompt('Nota 1: '))
+    // let nota2 = Number(prompt('Nota 2: '))
+    // let nota3 = Number(prompt('Nota 3: '))
+
+    // let media = (nota1+nota2+nota3) / 3
+
+    // if (media >= 7) {
+    //     document.write(`Parabéns você passou! Sua média foi ${media}`)
+    // } else if (media >= 4 && media < 7) {
+    //     document.write(`Você ficou de recuperação. Sua média foi ${media}`)
+    // } else {
+    //     document.write('Aluno reprovado')
+    // }
+
+    // Caso a média seja acima de 7, mostre uma mensagem dizendo que ele está aprovado, e se a média ficar abaixo de 7, recuperação
+
+    // let nota1 = Number(prompt('Nota 1: '))
+    // let nota2 = Number(prompt('Nota 2: '))
+    // let nota3 = Number(prompt('Nota 3: '))
+
+    // let media = (nota1+nota2+nota3) / 3
+
+    // let resultado = (media >= 7) ?
+    // "Aprovado":"Recuperação"
+
+    // document.write(resultado)
+
+    // Verifique se a idade está entre 13 e 18 para usar uma frunção específica  do sistema
+
+    // let idade = Number(prompt('Digite sua idade:'))
+
+    // let resultado = (idade <= 18 && idade >= 13) ? "Pode usar a função do sistema":"Não pode"
+
+    // document.write(resultado)
+
+    // Crie um programa que receba do user um nome de uma fruta e mostre o peço dessa fruta. Maça = 2,00, Banana = 3,00, laranja = 2,50
+
+    // let fruta = prompt('Digite a fruta')
+
+    // switch (fruta) {
+    //     case 'maça':
+    //         document.write('A maça custa 2,00 reais')
+    //         break;
+    //     case 'banana':
+    //         document.write('A banana custa 3,00')
+    //         break;
+    //     case 'laranja':
+    //         document.write('A laranja custa 2,50 reais')
+    //         break;
+    //     default:
+    //         document.write('Tem, mas está faltando')
+    //         break;
+    // }
+
+    // Crie um programa com um menu de opções. 1 - Cadastrar aluno, receber do teclado o nome e matricula do aluno. 2 - Calcular a média do Aluno. 3 - Mostrar situação do aluno (receba a média pelo teclado e mostre aprovado caso seja maior que 7 e recuperação caso seja menor que 7)
+    let menu = prompt(
+      "Escolha uma opção: \n 1 - Cadastrar \n 2 - Calcular a média do aluno \n 3 - Mostrar situação do aluno"
+    );
+    switch (menu) {
+      case "1":
+        let nome = prompt("Digite seu nome:");
+        document.write("<h1>Cadastrar o Aluno</h1>");
+        document.write(`Bem-vindo ${nome} você foi cadastrado com sucesso`);
+        break;
+
+      case "2":
+        let nota1 = Number(prompt("Digite sua nota do primeiro bimestre"));
+        let nota2 = Number(prompt("Digite sua nota do segundo bimestre"));
+        let media = (nota1 + nota2) / 2;
+        if (media >= 7) {
+          document.write("<h1>Calculando a média do Aluno</h1>");
+          document.write(
+            `Parabéns você está na média! <br> Média atual: ${media}`
+          );
+        } else {
+          document.write("<h1>Calculando a média do Aluno</h1>");
+          document.write(`Você está fora da média. <br> Média atual: ${media}`);
+        }
+        break;
+
+      case "3":
+        let psitu = Number(prompt("Digite sua Média"));
+        if (psitu >= 7) {
+          document.write("<h1>Calculando a média do Aluno</h1>");
+          document.write(`Parabéns você está na média!`);
+        } else {
+          document.write("<h1>Calculando a média do Aluno</h1>");
+          document.write(`Você está fora da média.`);
+        }
+        break;
+
+      default:
+        document.write(`"${menu}" é uma opção invalida`);
+        break;
+    }
+  </script>
+  <body></body>
+</html>
