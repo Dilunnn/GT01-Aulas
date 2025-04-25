@@ -9,6 +9,11 @@
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
     <title>Aula 17</title>
   </head>
   <script>
@@ -67,46 +72,80 @@
     // }
 
     // Crie um programa com um menu de opções. 1 - Cadastrar aluno, receber do teclado o nome e matricula do aluno. 2 - Calcular a média do Aluno. 3 - Mostrar situação do aluno (receba a média pelo teclado e mostre aprovado caso seja maior que 7 e recuperação caso seja menor que 7)
-    let menu = prompt(
-      "Escolha uma opção: \n 1 - Cadastrar \n 2 - Calcular a média do aluno \n 3 - Mostrar situação do aluno"
-    );
-    switch (menu) {
-      case "1":
-        let nome = prompt("Digite seu nome:");
-        document.write("<h1>Cadastrar o Aluno</h1>");
-        document.write(`Bem-vindo ${nome} você foi cadastrado com sucesso`);
-        break;
+    // let menu = prompt(
+    //   "Escolha uma opção: \n 1 - Cadastrar \n 2 - Calcular a média do aluno \n 3 - Mostrar situação do aluno"
+    // );
+    // switch (menu) {
+    //   case "1":
+    //     let nome = prompt("Digite seu nome:");
+    //     document.write("<h1>Cadastrar o Aluno</h1>");
+    //     document.write(`Bem-vindo ${nome} você foi cadastrado com sucesso`);
+    //     break;
 
-      case "2":
-        let nota1 = Number(prompt("Digite sua nota do primeiro bimestre"));
-        let nota2 = Number(prompt("Digite sua nota do segundo bimestre"));
-        let media = (nota1 + nota2) / 2;
-        if (media >= 7) {
-          document.write("<h1>Calculando a média do Aluno</h1>");
-          document.write(
-            `Parabéns você está na média! <br> Média atual: ${media}`
-          );
-        } else {
-          document.write("<h1>Calculando a média do Aluno</h1>");
-          document.write(`Você está fora da média. <br> Média atual: ${media}`);
-        }
-        break;
+    //   case "2":
+    //     let nota1 = Number(prompt("Digite sua nota do primeiro bimestre"));
+    //     let nota2 = Number(prompt("Digite sua nota do segundo bimestre"));
+    //     let media = (nota1 + nota2) / 2;
+    //     if (media >= 7) {
+    //       document.write("<h1>Calculando a média do Aluno</h1>");
+    //       document.write(
+    //         `Parabéns você está na média! <br> Média atual: ${media}`
+    //       );
+    //     } else {
+    //       document.write("<h1>Calculando a média do Aluno</h1>");
+    //       document.write(`Você está fora da média. <br> Média atual: ${media}`);
+    //     }
+    //     break;
 
-      case "3":
-        let psitu = Number(prompt("Digite sua Média"));
-        if (psitu >= 7) {
-          document.write("<h1>Calculando a média do Aluno</h1>");
-          document.write(`Parabéns você está na média!`);
-        } else {
-          document.write("<h1>Calculando a média do Aluno</h1>");
-          document.write(`Você está fora da média.`);
-        }
-        break;
+    //   case "3":
+    //     let psitu = Number(prompt("Digite sua Média"));
+    //     if (psitu >= 7) {
+    //       document.write("<h1>Calculando a média do Aluno</h1>");
+    //       document.write(`Parabéns você está na média!`);
+    //     } else {
+    //       document.write("<h1>Calculando a média do Aluno</h1>");
+    //       document.write(`Você está fora da média.`);
+    //     }
+    //     break;
 
-      default:
-        document.write(`"${menu}" é uma opção invalida`);
-        break;
-    }
+    //   default:
+    //     document.write(`"${menu}" é uma opção invalida`);
+    //     break;
+    // }
+
+    // Laços de repetição
+    // while (condição -> true) {
+    //     repetir
+    // }
+
+
+
+    // Crie um programa que solicite uma senha, caso a pessoa erre a senha solicite ela novamente, até que a pessoa acerte.
+    // let senhaCadastrada = '123456'
+
+    // let senhaDigitada = prompt('Digite a Senha:')
+
+    // while (senhaCadastrada != senhaDigitada) {
+
+    //     senhaDigitada = prompt('Senha errada, digite novamente')
+    // }
+    // document.write('<h1>Bem-vindo</h1>')
+
+    // Crie um programa com o while que conte até 10
+
+    // let contador = 0
+    // let limite = Math.pow(1000,2)
+    // while (contador <= limite ) {
+    //     document.write(`${contador} `)
+    //     contador++
+    // }
+
+    // do ... while 
+    let numero = 0
+    do {
+         numero = Number(prompt('Digite um número maior que 10'))
+    } while (numero <= 10);
+
   </script>
   <body></body>
 </html>
