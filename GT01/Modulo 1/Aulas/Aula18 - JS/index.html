@@ -3,14 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        p{
+            font-size: 3rem;
+        }
+        #erro{
+            color: red;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
     <title>Document</title>
 </head>
 <script>
 
+//     let op = prompt('Digite uma opção: \n1 - deprositar\n2 - Sacar\n3 - Verificar saldo\n Sair')
+
+// switch (op) {
+//     case 1:
+        
 
 
 
+
+
+//         break;
+
+//     default:
+//         break;
+// }
+
+// Crie uma calculadora: receba 2 números do usuário, e uma operação: +, - , /, *, ou sair, se ela escolher sair, encerra o programa. Se ela escolher uma das operações, mostrar o resultado.
+
+
+let num1 = Number(prompt('Digite um número'))
+let num2 = Number(prompt('Digite outro número'))
+let op = prompt('Escolha qual operação você deseja realizar:\n1 - Somar\n2 - subtrair\n3 - Dividir\n4 - multiplicar\n5 - Sair')
+console.log('tem nada aqui não volta pra página 😡');
+
+
+switch (op) {
+    case '1':
+        let r = num1 + num2
+        document.write(`<h1>Vamos Somar ${num1} e ${num2}:</h1>`)
+        document.write(`<p>${num1} + ${num2} = ${r} </p>`)
+        break;
+    case '2':
+    let s = num1 - num2
+        document.write(`<h1>Vamos Subtrair ${num1} e ${num2}:</h1>`)
+        document.write(`<p>${num1} - ${num2} = ${s} </p>`)
+        break;
+    case '3':
+    let d = num1 / num2
+        document.write(`<h1>Vamos Dividir ${num1} e ${num2}:</h1>`)
+        document.write(`<p>${num1} / ${num2} = ${d} </p>`)
+        break;
+    case '4':
+    let m = num1 * num2
+        document.write(`<h1>Vamos Multiplicar ${num1} e ${num2}:</h1>`)
+        document.write(`<p>${num1} * ${num2} = ${m} </p>`)
+        break;
+    case '5':
+    // sair
+    alert('Fim do programa')
     
+        break;
+
+    default:
+        document.write('<h1 id="erro">Opcão invalida</h1>')
+        break;
+}
+
+
+
+
+
 </script>
 <body>
     
