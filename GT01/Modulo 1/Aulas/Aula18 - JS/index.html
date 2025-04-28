@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        *{
+            text-align: center;
+        }
         p{
             font-size: 3rem;
         }
@@ -14,6 +17,7 @@
     </style>
     <title>Document</title>
 </head>
+<script src="funcoes.js"></script>
 <script>
 
 //     let op = prompt('Digite uma opção: \n1 - deprositar\n2 - Sacar\n3 - Verificar saldo\n Sair')
@@ -35,44 +39,77 @@
 // Crie uma calculadora: receba 2 números do usuário, e uma operação: +, - , /, *, ou sair, se ela escolher sair, encerra o programa. Se ela escolher uma das operações, mostrar o resultado.
 
 
-let num1 = Number(prompt('Digite um número'))
-let num2 = Number(prompt('Digite outro número'))
-let op = prompt('Escolha qual operação você deseja realizar:\n1 - Somar\n2 - subtrair\n3 - Dividir\n4 - multiplicar\n5 - Sair')
+// let num1 = Number(prompt('Digite um número'))
+// let num2 = Number(prompt('Digite outro número'))
+// let op = prompt('Escolha qual operação você deseja realizar:\n1 - Somar\n2 - subtrair\n3 - Dividir\n4 - multiplicar\n5 - Sair')
 console.log('tem nada aqui não volta pra página 😡');
 
 
-switch (op) {
-    case '1':
-        let r = num1 + num2
-        document.write(`<h1>Vamos Somar ${num1} e ${num2}:</h1>`)
-        document.write(`<p>${num1} + ${num2} = ${r} </p>`)
-        break;
-    case '2':
-    let s = num1 - num2
-        document.write(`<h1>Vamos Subtrair ${num1} e ${num2}:</h1>`)
-        document.write(`<p>${num1} - ${num2} = ${s} </p>`)
-        break;
-    case '3':
-    let d = num1 / num2
-        document.write(`<h1>Vamos Dividir ${num1} e ${num2}:</h1>`)
-        document.write(`<p>${num1} / ${num2} = ${d} </p>`)
-        break;
-    case '4':
-    let m = num1 * num2
-        document.write(`<h1>Vamos Multiplicar ${num1} e ${num2}:</h1>`)
-        document.write(`<p>${num1} * ${num2} = ${m} </p>`)
-        break;
-    case '5':
-    // sair
-    alert('Fim do programa')
+// switch (op) {
+//     case '1':
+//         let r = num1 + num2
+//         document.write(`<h1>Vamos Somar ${num1} e ${num2}:</h1>`)
+//         document.write(`<p>${num1} + ${num2} = ${r} </p>`)
+//         break;
+//     case '2':
+//     let s = num1 - num2
+//         document.write(`<h1>Vamos Subtrair ${num1} e ${num2}:</h1>`)
+//         document.write(`<p>${num1} - ${num2} = ${s} </p>`)
+//         break;
+//     case '3':
+//     let d = num1 / num2
+//         document.write(`<h1>Vamos Dividir ${num1} e ${num2}:</h1>`)
+//         document.write(`<p>${num1} / ${num2} = ${d} </p>`)
+//         break;
+//     case '4':
+//     let m = num1 * num2
+//         document.write(`<h1>Vamos Multiplicar ${num1} e ${num2}:</h1>`)
+//         document.write(`<p>${num1} * ${num2} = ${m} </p>`)
+//         break;
+//     case '5':
+//     // sair
+//     alert('Fim do programa')
     
-        break;
+//         break;
 
-    default:
-        document.write('<h1 id="erro">Opcão invalida</h1>')
-        break;
-}
+//     default:
+//         document.write('<h1 id="erro">Opcão invalida</h1>')
+//         break;
+// }
 
+
+
+
+
+
+// // let nome = 'Davi' 
+// // let idade = 20
+// // mandar_mensagem_personalizada(nome,idade)
+
+
+
+
+// let num = Number(prompt('Digite um número'))
+
+// document.write(`<h1>O número digitado é ${verificar_paridade(num)}</h1>`)
+
+
+// let idade = Number(prompt('Digite sua idade'))
+// document.write(`<h1>Você é ${verificar_faixa_etaria(idade)}</h1>`)
+
+let saldo = 500
+do {
+    let opcaoes = prompt('1 - Deprostiar\n2 - Sacar\n3 - Ver saldo\n4 - sair')
+    if (opcaoes == '1') {
+        let deprosito = Number(prompt('Digite quanto vai deprositar:'))
+        alert(`Seu saldo é ${depositar_valor(deprosito,saldo)}`)
+    } else if (opcaoes == '2'){
+        let saque = Number(prompt('Quanto vai sacar?'))
+        sacar_valor(saque, saldo)
+    } else if (opcaoes == '3') {
+        mostrar_saldo(saldo)
+    }
+} while (opcaoes != '4');
 
 
 
