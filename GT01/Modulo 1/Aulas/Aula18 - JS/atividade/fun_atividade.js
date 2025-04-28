@@ -87,22 +87,59 @@ function multiplicar(n1, n2) {
 }
 // =============================================================================
 // 1. Crie uma função chamada cumprimentar que exibe "Olá, mundo!" no console.
+function ola() {
+    console.log('Olá mundo!');
+    
+}
 
 // 2. Crie uma função chamada mostrarNome que receba um nome como parâmetro e exiba "Olá, [nome]" no console.
 // (Exemplo: se passar "Maria", deve aparecer "Olá, Maria")
+function ola_personalizado(nome) {
+    console.log(`Olá, ${nome}`);
+    
+}
 
 // 3. Crie uma função chamada somar que receba dois números como parâmetros e retorne a soma deles.
+function somar(n1, n2) {
+    return n1 + n2
+}
 
 // 4. Crie uma função chamada multiplicarPorDois que receba um número como parâmetro e retorne esse número multiplicado por 2.
+function multiplicarPorDois(n1, n2) {
+    return n1 * n2
+}
 
 // 5. Crie uma função mostrarMensagem que NÃO recebe parâmetros e NÃO retorna nada, apenas imprime no console: "Funções são legais!"
+function mostrarMensagem() {
+    alert('Funções são legais!!!')
+}
 
 // 6. Crie uma função chamada verificarPar que recebe um número e retorna true se o número for par, ou false se for ímpar.
+function verificarPar(n) {
+    if (n % 2 === 0) {
+        console.log(true);
+        
+    } else {
+        console.log(false);
+        
+    }
+}
 
 // 7. Crie uma função chamada converterParaMaiusculo que receba uma palavra e retorne a palavra toda em letras maiúsculas.
+function converterParaMaiusculo(mini) {
+    let minusculo = mini
+    let maiusculo = minusculo.toUpperCase()
+    console.log(maiusculo);
+    
+}
 
 // 8. Crie uma função calcularAreaRetangulo que receba dois parâmetros (base e altura) e retorne a área do retângulo.
 // (Fórmula: área = base × altura)
+function calcularAreaRetangulo(base,altura) {
+let area = base * altura
+console.log(area);
+
+}
 
 
 
