@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividades</title>
 </head>
+<script src="fun_atividade.js"></script>
 <script>
+    // 4. Crie uma função que receba um número de 1 a 7 e retorne o dia da semana correspondente.
+    // let dia = Number(prompt('Digite um número:'))
+    // document.write(`O número ${dia} corresponde com o dia da semana de ${dia_da_semana(dia)}`)
+    // let numero = Number(prompt('Digite um número'))
+    // imprimir_numero(numero)
 
+    // let numero = Number(prompt('Digite um número:'))
+    // console.log(`O número que você digitou é ${numero_pnz(numero)}`);
 
     
+    let num1 = Number(prompt('Digite um número'))
+    let num2 = Number(prompt('Digite mais um número'))
+    while (true) {
+        let op = prompt('Escolha qual operação você deseja realizar:\n1 - Somar\n2 - subtrair\n3 - Dividir\n4 - multiplicar\n5 - Sair')
+
+        if (op == '1') {
+            document.write(`Somando ${num1} e ${num2} temos o resultado de: ${somar(num1, num2)}`)
+        } else if (op == '2') {
+            document.write(`Somando ${num1} e ${num2} temos o resultado de: ${subtrair(num1, num2)}`)
+
+        } else if (op == '3') {
+            document.write(`Somando ${num1} e ${num2} temos o resultado de: ${dividir(num1, num2)}`)
+
+        } else if (op == '4') {
+            document.write(`Somando ${num1} e ${num2} temos o resultado de: ${multiplicar(num1, num2)}`)
+
+        } else if (op == '5') {
+            document.write('Fim do programa')
+            break; 
+        }
+            
+    }
+
 </script>
+
 <body>
-    
+
 </body>
+
 </html>
