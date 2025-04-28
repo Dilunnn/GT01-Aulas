@@ -17,7 +17,13 @@ function somar_numeros(n1,n2) {
 // alert(somar_numeros(15,20))
 
 // 2. Crie uma função que receba um número e retorne se ele é par ou imprar
-
+function verificar_paridade(numero) {
+    if (numero % 2 == 0) {
+        return 'par'
+    } else {
+        return 'impar'
+    }
+}
 // Crie uma função que verifica a faixa etaria do user
 function verificar_faixa_etaria(idade) {
     if (idade > 0 && idade <=12) {

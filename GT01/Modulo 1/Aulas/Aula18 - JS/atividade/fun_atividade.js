@@ -16,7 +16,21 @@ function verificar_paridade(numero) {
 
 // 3. Crie uma função que receba uma idade e retorne se é "Criança", "Adolescente" ou "Adulto".
 
+function verificar_faixa_etaria(idade) {
+    if (idade > 0 && idade <=12) {
+        return 'Criança'
+    } else if (idade > 12 && idade <=17) {
+        return 'Adolescente'
+    } else if (idade > 17 && idade <= 59) {
+        return 'adulto'
+    } else if (idade > 59) {
+        return 'Velho'
+    }
+}
+
+    
 // 4. Crie uma função que receba um número de 1 a 7 e retorne o dia da semana correspondente.
+
 
 // 6. Crie uma função que receba um número e imprima todos os números de 0 até ele.
 
