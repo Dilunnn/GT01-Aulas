@@ -17,9 +17,9 @@ function verificar_paridade(numero) {
 // 3. Crie uma função que receba uma idade e retorne se é "Criança", "Adolescente" ou "Adulto".
 
 function verificar_faixa_etaria(idade) {
-    if (idade > 0 && idade <=12) {
+    if (idade > 0 && idade <= 12) {
         return 'Criança'
-    } else if (idade > 12 && idade <=17) {
+    } else if (idade > 12 && idade <= 17) {
         return 'Adolescente'
     } else if (idade > 17 && idade <= 59) {
         return 'adulto'
@@ -28,16 +28,63 @@ function verificar_faixa_etaria(idade) {
     }
 }
 
-    
-// 4. Crie uma função que receba um número de 1 a 7 e retorne o dia da semana correspondente.
 
+// 4. Crie uma função que receba um número de 1 a 7 e retorne o dia da semana correspondente.
+function dia_da_semana(dia) {
+    if (dia == 1) {
+        return 'Segunda-feira'
+    } else if (dia == 2) {
+        return 'Terça-feira'
+    } else if (dia == 3) {
+        return 'Quarta-feira'
+    } else if (dia == 4) {
+        return 'Quinta-feira'
+    } else if (dia == 5) {
+        return 'Sexta-feira'
+    } else if (dia == 6) {
+        return 'Sábado'
+    } else if (dia == 7) {
+        return 'Domingo'
+    }
+}
 
 // 6. Crie uma função que receba um número e imprima todos os números de 0 até ele.
+function imprimir_numero(n1) {
+    for (let i = -1; i < n1; i++) {
+        console.log(i + 1);
+
+
+    }
+
+}
 
 // 8. Crie uma função que receba um número e diga se é positivo, negativo ou zero.
-
+function numero_pnz(n) {
+    if (n > 0) {
+        return 'Positivo'
+    } else if (n < 0) {
+        return 'Negativo'
+    } else if (n == 0) {
+        return 'Zero'
+    }
+}
 // 9. Crie uma função que simule uma calculadora. A função deve receber 2 números e uma operação (+, -, *, /) e usar switch para calcular.
-
+function somar(n1, n2) {
+    let cal = n1 + n2
+    return cal
+}
+function subtrair(n1, n2) {
+    let cal = n1 - n2
+    return cal
+}
+function dividir(n1, n2) {
+    let cal = n1 / n2
+    return cal
+}
+function multiplicar(n1, n2) {
+    let cal = n1 * n2
+    return cal
+}
 // =============================================================================
 // 1. Crie uma função chamada cumprimentar que exibe "Olá, mundo!" no console.
 
