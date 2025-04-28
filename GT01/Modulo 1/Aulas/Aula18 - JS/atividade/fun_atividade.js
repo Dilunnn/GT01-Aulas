@@ -1,57 +1,64 @@
-/*
-Questões
-============================================================================
-1. Crie uma função que receba dois números e retorne a soma deles.
 
-2. Crie uma função que receba um número e retorne se ele é par ou ímpar.
+// Questões
+// ============================================================================
+// 1. Crie uma função que receba dois números e retorne a soma deles.
 
-3. Crie uma função que receba uma idade e retorne se é "Criança", "Adolescente" ou "Adulto".
-
-4. Crie uma função que receba um número de 1 a 7 e retorne o dia da semana correspondente.
-
-6. Crie uma função que receba um número e imprima todos os números de 0 até ele.
-
-8. Crie uma função que receba um número e diga se é positivo, negativo ou zero.
-
-9. Crie uma função que simule uma calculadora. A função deve receber 2 números e uma operação (+, -, *, /) e usar switch para calcular.
-
-=============================================================================
-1. Crie uma função chamada cumprimentar que exibe "Olá, mundo!" no console.
-
-2. Crie uma função chamada mostrarNome que receba um nome como parâmetro e exiba "Olá, [nome]" no console.
-(Exemplo: se passar "Maria", deve aparecer "Olá, Maria")
-
-3. Crie uma função chamada somar que receba dois números como parâmetros e retorne a soma deles.
-
-4. Crie uma função chamada multiplicarPorDois que receba um número como parâmetro e retorne esse número multiplicado por 2.
-
-5. Crie uma função mostrarMensagem que NÃO recebe parâmetros e NÃO retorna nada, apenas imprime no console: "Funções são legais!"
-
-6. Crie uma função chamada verificarPar que recebe um número e retorna true se o número for par, ou false se for ímpar.
-
-7. Crie uma função chamada converterParaMaiusculo que receba uma palavra e retorne a palavra toda em letras maiúsculas.
-
-8. Crie uma função calcularAreaRetangulo que receba dois parâmetros (base e altura) e retorne a área do retângulo.
-(Fórmula: área = base × altura)
+// 2. Crie uma função que receba um número e retorne se ele é par ou ímpar.
 
 
+function verificar_paridade(numero) {
+    if (numero % 2 == 0) {
+        return 'par'
+    } else {
+        return 'impar'
+    }
+}
+
+// 3. Crie uma função que receba uma idade e retorne se é "Criança", "Adolescente" ou "Adulto".
+
+// 4. Crie uma função que receba um número de 1 a 7 e retorne o dia da semana correspondente.
+
+// 6. Crie uma função que receba um número e imprima todos os números de 0 até ele.
+
+// 8. Crie uma função que receba um número e diga se é positivo, negativo ou zero.
+
+// 9. Crie uma função que simule uma calculadora. A função deve receber 2 números e uma operação (+, -, *, /) e usar switch para calcular.
+
+// =============================================================================
+// 1. Crie uma função chamada cumprimentar que exibe "Olá, mundo!" no console.
+
+// 2. Crie uma função chamada mostrarNome que receba um nome como parâmetro e exiba "Olá, [nome]" no console.
+// (Exemplo: se passar "Maria", deve aparecer "Olá, Maria")
+
+// 3. Crie uma função chamada somar que receba dois números como parâmetros e retorne a soma deles.
+
+// 4. Crie uma função chamada multiplicarPorDois que receba um número como parâmetro e retorne esse número multiplicado por 2.
+
+// 5. Crie uma função mostrarMensagem que NÃO recebe parâmetros e NÃO retorna nada, apenas imprime no console: "Funções são legais!"
+
+// 6. Crie uma função chamada verificarPar que recebe um número e retorna true se o número for par, ou false se for ímpar.
+
+// 7. Crie uma função chamada converterParaMaiusculo que receba uma palavra e retorne a palavra toda em letras maiúsculas.
+
+// 8. Crie uma função calcularAreaRetangulo que receba dois parâmetros (base e altura) e retorne a área do retângulo.
+// (Fórmula: área = base × altura)
 
 
-========================================================================
-2. Crie uma função classificarNota que receba uma nota de 0 a 10 e use switch para retornar: "Excelente" (9–10), "Bom" (7–8), "Regular" (5–6), ou "Reprovado" (0–4).
-
-3. Crie uma função listarNumerosPares que receba um número n e imprima todos os números pares de 0 até n.
-Use for.
-
-4. Crie uma função contarDezAZero que imprima no console os números de 10 até 0, usando while.
 
 
-6. Crie uma função tabuada que receba um número e imprima a tabuada dele de 1 a 10 usando for.
+// ========================================================================
+// 2. Crie uma função classificarNota que receba uma nota de 0 a 10 e use switch para retornar: "Excelente" (9–10), "Bom" (7–8), "Regular" (5–6), ou "Reprovado" (0–4).
 
-9. Crie uma função mediaNotas que receba 5 notas (uma lista ou chamadas separadas) e calcule a média. Depois, com if/else, diga se a pessoa foi "Aprovada" (média ≥ 7) ou "Reprovada".
+// 3. Crie uma função listarNumerosPares que receba um número n e imprima todos os números pares de 0 até n.
+// Use for.
+
+// 4. Crie uma função contarDezAZero que imprima no console os números de 10 até 0, usando while.
 
 
-Use switch para executar a operação matemática entre dois números.
+// 6. Crie uma função tabuada que receba um número e imprima a tabuada dele de 1 a 10 usando for.
+
+// 9. Crie uma função mediaNotas que receba 5 notas (uma lista ou chamadas separadas) e calcule a média. Depois, com if/else, diga se a pessoa foi "Aprovada" (média ≥ 7) ou "Reprovada".
 
 
-*/
+// Use switch para executar a operação matemática entre dois números.
+
