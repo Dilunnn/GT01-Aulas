@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 19</title>
+</head>
+<script src="funcaoaula19.js"></script>
+<script>
+    // let altura = Number(prompt('Digite sua altura'))
+    // let peso = Number(prompt('Digite seu peso'))
+    // console.log(`Seu iMC é de: ${calcularoimc(altura,peso)}`);
+
+    // let mensagem = classificarIdade(19,'Luiz')
+    // console.log(mensagem);
+    
+
+    //  Array
+            //    0------1-------2------3--4-5---6----7------8
+    // let nomes = ['Ana','Pedro','Maria',28,30,12,true,true,false]
+    // console.log(nomes[2]);
+    // nomes[3] = 'Davi'
+    // console.log(nomes[3]);
+
+    // console.log(nomes.length);
+    
+    // nomes[9] = 'Carla'
+    // console.log(nomes[9]);
+    
+    // let nomes = ['Ana','Pedrio','Maria','Davi','Paulo','Gabriel']
+
+    // for (let i = 0 ; i < nomes.length; i++) {
+    //     console.log(`Olá ${nomes[i]}`);
+    // }
+
+    // Crie um programa que receba 3 notas e armazene elas em um array de notas, depois calcule a média dessas notas
+
+    // let notas = []
+    // for (let i = 0; i < 3; i++) {
+    //     notas[i] = Number(prompt('Digite sua nota'))
+    // }
+    // let media = calcularmedia(notas) / notas.length 
+    // console.log(`A sua média é ${media}`);
+
+    // Métodos do arrays
+    // método push() - adicioar um elemento ao final do array
+    let nomes = ['Ana','Pedro','Maria']
+    nomes.push('Davi')
+    console.log(nomes);
+    
+    //.pop() Remover um elemento no final de um array
+    nomes.pop()
+    console.log(nomes)
+
+    // shift() -> remove o primeiro elementro
+    nomes.shift()
+    console.log(nomes);
+
+    // .unshift() -> adicionar um elemento no inicio de um array
+    nomes.unshift('Patricia')
+    console.log(nomes);
+
+    // sliece() -> copia uma parte do array
+    let letras = ['a','b','c','d']
+    let parte = letras.slice(1,4)
+    console.log(parte);
+
+    // .splice(inicio,quantidade,substitutos...)
+    letras.splice(2,0,'f')
+    console.log(letras);
+    
+    // indexOf -> retorna o índice de um elemento específico
+
+    let indice = letras.indexOf('c')
+    console.log(indice);
+
+    // incluedes() -> retorna true se achar e se n achar retorna false
+
+    let achou = letras.includes('')
+    if (achou){
+        console.log(`Achou `);
+        
+    }else {
+        console.log('Não achou');
+        
+    }
+    
+    
+        
+    
+    
+
+
+  
+  
+    
+
+    
+    
+        
+</script>
+<body>
+    
+</body>
+</html>
