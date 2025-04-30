@@ -152,17 +152,26 @@ Crie um array com 3 nomes. Use um if para verificar se o nome "Lucas" está no a
 let contaBancaria = {
     titular: 'rodrigo' ,
     saldo: 500,
-    sacar: (vaisacar) => {
-        if (vaisacar <= contaBancaria.saldo) {
-            contaBancaria.saldo -= vaisacar
-            console.log(`Seu saldo atual é de ${saldo}`);
+    sacar: (saque) => {
+        if (saque <= contaBancaria.saldo) {
+            contaBancaria.saldo -= saque
+            console.log(`Seu saldo atual é de R$${contaBancaria.saldo}`);
         } else {
            console.log('saldo insuficiente'); 
             
         }
     },
+    depositar: (deposito) => {
+        contaBancaria.saldo += deposito
+    },
+    verSaldo: () => {
+        console.log(`Seu saldo atual é de: R$${contaBancaria.saldo}`);
+        
+    } ,
 }
-console.log(contaBancaria);
+
+
+
 
 
 
