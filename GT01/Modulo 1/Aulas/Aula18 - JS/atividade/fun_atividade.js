@@ -147,6 +147,7 @@ console.log(area);
 // ========================================================================
 // 2. Crie uma função classificarNota que receba uma nota de 0 a 10 e use switch para retornar: "Excelente" (9–10), "Bom" (7–8), "Regular" (5–6), ou "Reprovado" (0–4).
 
+
 // 3. Crie uma função listarNumerosPares que receba um número n e imprima todos os números pares de 0 até n.
 // Use for.
 

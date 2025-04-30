@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 20</title>
+</head>
+<script src="funcoes.js"></script>
+<script>
+/*
+✅ 1. Adicionando nomes
+Crie um array com 3 nomes. Use um if para verificar se o nome "Lucas" está no array. Se não estiver, adicione com push.
+*/
+// let nomes = ['João', 'Maria','Pedro']
+
+// console.log(nomes)
+
+// // if(nomes.indexOf('Lucas') == -1 ){
+// //     nomes.push('Lucas')
+// // }
+
+// if(nomes.includes('Lucas') == false){
+//     nomes.splice(0,0,'Lucas','Paulo')
+// }
+
+// console.log(nomes)
+
+
+
+// let frutas = ['banana', 'maçã', 'uva', 'kiwi']
+// console.log(frutas);
+
+// frutas.splice(2,1)
+
+// console.log(frutas);
+// //             0   1   2
+// let letras = ['a','b','c','d','e']
+
+// let letras2 = letras.slice(0,3)
+//                      //  0,1,2
+// console.log(letras2) // [a,b,c]
+
+
+// for(let i = 0;i < 3; i++){
+//     letras.push(letras[i])
+// }
+
+// console.log(letras)
+
+// ✅ 5. Substituir um elemento por outro
+// Dado o array ['joão','ana','paulo'], peça para o usuário (via prompt() em ambiente de navegador) digitar um nome. Se esse nome existir no array (includes), substitua por "visitante" com splice.
+
+// let nomes = ['joão','ana','paulo']
+// let usernome = prompt('Digite um nome:')
+// console.log(nomes);
+
+// if (nomes.indexOf(usernome) == -1 ) {
+//     console.log('Esse nome não existe na lista de nomes');
+// } else {
+//     let indice = nomes.indexOf(usernome)
+//     let substituir = nomes.splice(indice,1,'visitante')
+//     console.log(nomes);
+    
+// }
+
+// ✅ 7. Contar quantas vezes aparece um nome
+// Com o array ['Ana', 'Pedro', 'Ana', 'Maria', 'Ana'], use for para contar quantas vezes o nome "Ana" aparece.
+
+// let nomes = ['Ana', 'Pedro', 'Ana', 'Maria', 'Ana']
+
+// let cont = 0
+
+// console.log(nomes);
+
+// for (let i = 0; i < nomes.length; i++) {
+//     if (nomes[i] === 'Ana') {
+//         cont++
+        
+        
+//     }
+// }
+// console.log(`Ana apareceu ${cont} vezes`);
+
+// console.log(nomesA);
+
+
+// Objeto em JS é uma estrutura de dados que é construida utilizando chave e valor.]
+// atributos = caracteristicas
+// métodos = ações
+// let pessoa = {
+//     nome: 'Maria',
+//     idade: 28,
+//     cpf: '123123123',
+//     cidade: 'Fortaleza',
+//     dizerOla: () => {document.write(`<br>Olá eu sou ${pessoa.nome}`)}
+// }
+
+
+// pessoa.dizerOla()
+
+// pessoa.nome = prompt('Digite seu nome')
+
+// console.log(`Olá ${pessoa.nome} você tem ${pessoa.idade} anos de idade `);
+// pessoa.dizerOla()
+
+// pessoa.profissao = 'Programador'
+// console.log(pessoa);
+
+// delete pessoa.cidade
+
+// console.log(pessoa);
+
+// let chaves = Object.keys(pessoa)
+// console.log(chaves);
+
+// Crie um objeto chamado produto que tenha os atributos: nome,descrição e preço, e depois receba do user esses atributos. depois mostre na tela uma mensagem com o nome descriçãoo e o valor do produto
+
+// let produto = {
+//     nome: '',
+//     descricao: '',
+//     preco: 0 
+// }
+
+// produto.nome = prompt('Digite o nome do produto:')
+// produto.descricao = prompt('Digite a descrição do produto:')
+// produto.preco = Number(prompt('Digite o preço do produto'))
+// document.write(`<h1>produto - ${produto.nome}<br>descrição - ${produto.descricao} <br>preço - R$${produto.preco}</h1>`)
+
+
+// Crie um objeto chamado livro com as seguintes propriedades: 
+// título, autor, ano e número de páginas
+// Depois: Mostre todos os dados do livro, adicione uma propriedade editora, mude o número de páginas, remova a propriedade ano
+
+// let livro = {
+//     titulo: 'O Menino Maluquinho',
+//     autor: 'Ziraldo',
+//     ano: '2023',
+//     numerodepaginas: '112 páginas'
+// }
+// document.write(`<h1>${livro.titulo}</h1> <h2>Autor: ${livro.autor}</h2> <p>Ano: ${livro.ano}</p> <p>Númro de páginas:${livro.numerodepaginas}</p> <hr>`)
+
+// livro.editora = 'Melhoramentos'
+// livro.numerodepaginas = '210 páginas'
+// delete livro.ano
+
+// document.write(`<h1>${livro.titulo}</h1> <h2>Autor: ${livro.autor}</h2> <p>Ano: ${livro.ano}</p> <p>Númro de páginas:${livro.numerodepaginas}</p>`)
+
+
+
+
+//Crie um objeto chamado conta bancária que tem os atributos: titular e saldo, e os métodos, sacar, depositar e verSaldo.
+let contaBancaria = {
+    titular: 'rodrigo' ,
+    saldo: 500,
+    sacar: (vaisacar) => {
+        if (vaisacar <= contaBancaria.saldo) {
+            contaBancaria.saldo -= vaisacar
+            console.log(`Seu saldo atual é de ${saldo}`);
+        } else {
+           console.log('saldo insuficiente'); 
+            
+        }
+    },
+}
+console.log(contaBancaria);
+
+
+
+
+</script>
+<body>
+    
+</body>
+</html>
