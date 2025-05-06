@@ -10,6 +10,14 @@
             color: white;
             font-family: Arial, Helvetica, sans-serif;
         }
+        #area {
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
     </style>
     <title>Dom</title>
 </head>
@@ -20,13 +28,38 @@
     <h1>Iniciando estudo de dom</h1>
     <p>Aqui vai o resultado</p>
     <p>aprendendo a usar <strong>dom</strong> em js</p>
-    <div id="div1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, autem voluptas enim modi alias quos. Repellendus, veritatis id fugiat commodi nam, aliquid reiciendis et unde corporis perferendis quas corrupti temporibus!</div>
+    <!-- <div id="div1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, autem voluptas enim modi alias quos. Repellendus, veritatis id fugiat commodi nam, aliquid reiciendis et unde corporis perferendis quas corrupti temporibus!</div>
+ -->
+
+    <div id="area">
+        Interaja....
+    </div>
 
 
 </body>
 <script>
+    let area = document.getElementById('area')
+    area.addEventListener('click', clicar)
+    area.addEventListener('mouseenter', entrou)
+    area.addEventListener('mouseout', sair)
+
+    function clicar() {
+       alert('BU! 👻')
+        
+    }
+    function entrou() {
+        area.innerText = 'Esperando o click'
+        area.style.background = 'red'
+    }
+    function sair(){
+        area.innerText = 'esperando'
+        area.style.background = 'green'
+    }
     let teste = document.getElementById('div1')
     teste.style.fontSize = '2px'
+
+
+    
 </script>
 
 </html>
