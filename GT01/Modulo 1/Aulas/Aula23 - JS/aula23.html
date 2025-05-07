@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos e APIs</title>
+</head>
+<body>
+
+    <!-- <img class="papelParede" id="imgMonitor" src="https://images.kabum.com.br/produtos/fotos/229561/monitor-gamer-aoc-legend-27-led-curvo-240-hz-full-hd-0-5ms-freesync-premium-120-srgb-hdmi-displayport-c27g2ze_1632937087_gg.jpg" >
+
+    <br>
+    <input id="inputA" type="text" placeholder="Input A">
+
+    <br>
+
+    <input type="text" name="" id="inputB" placeholder="Input B"> -->
+
+    <div ondblclick="clicou()" id="caixa1" style="background-color: aqua; width: 300px; height: 300px;">
+        <button onclick="inserirImagem()">Inserir Imagem</button>
+    </div>
+
+    <input id="inputA" type="text" onkeypress="" placeholder="Digite algo"><br>
+    Números: <input id="numero" type="text" onkeypress=""><br>
+    Letras: <input id="letras" type="text" onkeypress=""><br>
+
+
+    
+</body>
+
+<script>
+    function clicou(){
+        alert('Clicou')
+    }
+
+// Selecionar os elementos no DOM
+/*
+document.getElementById('ID do elemento')
+document.getElementsByClassName('Classe dos elementos') - Mais de um elemento []
+document.getElementsByTagName('tag dos elementos') - Seleciona os elementos pela tag[]
+document.querySelector('Seletor CSS') - seleciona o primeiro elemento por meio do seletor
+document.querySelectorAll('Seletor CSS') - Seleciona todos os elementos por meio do seletor
+*/
+
+// Alteração de conteúdo do HTML
+
+/*
+Alterar o texto
+elemento.innerText - Altera o coteúdo textual do elemento
+elemento.innerHTML - Altera o coteúdo HTML do elemento
+
+Alteração em formularios
+elementoFormulario.value - valor contido no elemento
+elementoFormulario.focus() - O elemento fica em foco
+elementoFormulario.blur() - Remove o foco do elemento
+
+
+Alterar atributos
+elemento.setAttribute('atributo','valor') - Adiciona um novo atributo
+elemento.removeAttribute('Atributo') - Remove um atributo
+elemtno.getAttribute('atributo') - Retornar o valor de um atributo
+
+Aletrar o CSS dos elementos
+elemento.style.propriedade = valor - Altera o CSS do elemento
+elemento.ClassList - Retorna a lista de classes desse elemento
+elemento.ClassList.add('Classe') - Adiciona uma classe
+elemento.ClassList.remove('Classe') - Remove uma classe
+elemento.ClassList.toggle('Classe') - Liga e desliga uma classe
+elemento.ClassList.contains('Classe') - Verifica a classe do elemento
+
+Criação de elementos HTML com o JS
+document.createElement('tag')
+
+Inserção de elementos 
+elemento.appendChild(novoElemento)
+
+*/
+
+// function inserirImagem(){
+
+//     let novaImagem2 = document.getElementById('novaImagem')
+//     console.log(novaImagem2)
+
+//     if(novaImagem2){
+//         console.log('Elemento Existe');
+//     }else{
+//         let div = document.getElementById('caixa1')
+
+//         let urlImg = "https://images.kabum.com.br/produtos/fotos/229561/monitor-gamer-aoc-legend-27-led-curvo-240-hz-full-hd-0-5ms-freesync-premium-120-srgb-hdmi-displayport-c27g2ze_1632937087_gg.jpg"
+
+//         let novaImagem = document.createElement('img')
+//         novaImagem.setAttribute('src',urlImg)
+//         novaImagem.setAttribute('width','300px')
+//         novaImagem.setAttribute('id','novaImagem')
+//         div.appendChild(novaImagem)
+
+
+//         novaImagem2 = document.getElementById('novaImagem')
+//         console.log(novaImagem)
+
+//         console.log(novaImagem2)
+//     }
+// }
+
+// let imagem = document.getElementById('imgMonitor')
+// imagem.setAttribute('width','300px')
+// console.log(imagem.getAttribute('alt'))
+// console.log(imagem.classList.contains('papelParede'))
+
+// let inputA = document.getElementById('inputA')
+// let inputB = document.getElementById('inputB')
+
+// inputB.focus()
+
+// Eventos
+
+// Mouse
+/*
+    onclick(função()) - Clique com o botão esquerdo
+    ondblclick(função()) - Clique duplo
+    onmousedown() - Assim que aperta o botão esquerdo
+    onmouseover() - Quando o mouse passa por cima do elemento
+    onmouseleave() - Quando o mouse deixa o local
+*/
+
+// Eventos de Teclado
+/*
+onkeydown() - Tecla é pressionado (Inclui teclas de função)
+onkeyup() - Tecla é solta
+onkeypress() - Tecla pressionada (Caracteres visíveis)
+*/
+
+
+
+</script>
+
+</html>

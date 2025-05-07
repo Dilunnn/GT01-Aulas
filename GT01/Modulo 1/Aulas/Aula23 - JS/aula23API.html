@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funções assincronas e api</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // function fazeralgoassincrono(outrafuncao) {
+    //     console.log('iniciando a atividade');
+        
+    //     setTimeout(() => {
+    //         console.log('A operação foi concluida');
+    //         outrafuncao()
+    //     }, 2000)
+    // }
+    // function outrafuncao(){
+    //     console.log('Iniciando outra atividade');
+        
+    // }
+
+    // fazeralgoassincrono(() => {console.log('Iniciando outra atividade');
+    // })
+    // console.log('A operação ainda está em processo');
+    // console.log('A operação ainda está em processo');
+    // console.log('A operação ainda está em processo');
+
+    // let pessoa = {
+    //     nome: 'Kátia',
+    //     idade: 26,
+    //     cidade: 'Fortaleza-CE',
+    //     cpf:'894.345.200-69',
+    // }
+    // let pessoaJSON = JSON.stringify(pessoa)
+    // console.log(pessoa);
+    // console.log(pessoaJSON);
+
+
+    // let carroJSON = '{"modelo":"KA","marca":"Ford","ano": "1980"}'
+
+    // let carro = JSON.parse(carroJSON)
+        
+    // console.log(carro);
+    
+    fetch('https://fakestoreapi.com/products')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+    
+
+
+    
+
+    
+</script>
+</html>
