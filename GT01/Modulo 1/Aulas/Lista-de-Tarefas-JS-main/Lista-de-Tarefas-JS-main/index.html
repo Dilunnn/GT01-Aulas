@@ -11,7 +11,7 @@
     <h1>Lista de Tarefas</h1>
     <form id="formularioTarefa">
       <input type="text" id="inputTarefa" placeholder="Digite uma tarefa" required>
-      <button type="button" onclick="criarlista()">Adicionar Tarefa</button>
+      <button type="button"  onclick="criarlista()">Adicionar Tarefa</button>
     </form>
     <ul id="listaTarefas"></ul>
   </div>
@@ -26,14 +26,17 @@ function criarlista() {
     let divbtn = document.createElement('div')
     let btnedit = document.createElement('button')
     let btnexcluir = document.createElement('button')
+    
 
     if (tarefa == '') {
       alert('Digite algo para adicionar as tarefas')
     } else {
+      
       listtarefa.innerText = `${tarefa}`
       btnedit.innerText = 'Editar'
       btnedit.style.marginRight = '20px'
       btnexcluir.innerText = 'Excluir'
+      
       lista.appendChild(listtarefa)
       divbtn.appendChild(btnedit)
       divbtn.appendChild(btnexcluir)
