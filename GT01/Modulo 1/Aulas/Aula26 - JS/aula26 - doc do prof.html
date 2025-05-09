@@ -18,7 +18,11 @@
 
     <button id="btnEnviar">Enviar</button>
 
-    <h2>Buscar</h2>
+    <label for="cep">Cep:</label> <br>
+    <input type="text" id="cep" name="cep">
+    <button id="btncep" onclick="buscarcep()">Buscar</button>
+ 
+    <!-- <h2>Buscar</h2>
     <label for="id">ID: </label>
     <input type="text" id="id" name="id"><br><br>
 
@@ -37,7 +41,7 @@
     <div id="resultadoDelete">
 
     </div>
-
+ -->
 
 </body>
 
@@ -51,51 +55,92 @@ botao.addEventListener('click',() =>{
     let id = document.getElementById('id_usuario').value
     let pessoa = {
         nome:nome,
-        cpf:cpf
+        cpf:cpf,
+        id:id
     }
-    console.log(pessoa)
-    pessoa = JSON.stringify(pessoa)
-    console.log(pessoa)
+    let pessoalocal = localStorage.getItem('pessoa')
+    let pessoas = []
+    console.log(pessoalocal);
 
-    localStorage.setItem(id,pessoa)
+    if (pessoalocal) {
+        let pessoasLocal = localStorage.getItem('pessoas')
+        pessoasLocal = JSON.parse(pessoasLocal)
+        pessoasLocal.push(pessoa)
+        pessoasLocal = JSON.stringify(pessoasLocal)
+        localStorage.setItem('pessoas',pessoasLocal)
 
-    index += 1
-})
-
-function buscarUsuario(){
-    let id = document.getElementById('id').value
-
-    let usuarioJSON = localStorage.getItem(id)
-
-    let usuarioOBJ = JSON.parse(usuarioJSON)
-
-    console.log(usuarioOBJ)
-
-    let div = document.getElementById('resultadoBusca')
-    try{
-        div.innerHTML = `
-    <h2>Resultado da busca </h2>
-    <h3>Nome: ${usuarioOBJ.nome} </h3>
-    <h3>CPF: ${usuarioOBJ.cpf} </h3>
-    `
-    }catch (erro){
-        div.innerHTML = `
-        Esse ID não pertence a nenhum usuário!!
-    `
+    } else {
+        pessoas.push(pessoa)
+        pessoas = JSON.stringify(pessoas)
+        localStorage.setItem('pessoas',pessoas)
     }
     
+    // console.log(pessoa)
+    // pessoa = JSON.stringify(pessoa)
+    // console.log(pessoa)
+
+    // localStorage.setItem(id,pessoa)
+
+    // index += 1
+})
+
+// const numero =  10
+
+// try {
+//     numero = 15
+// }catch (erro){
+//     console.log(erro);
+    
+// }
+function buscarcep() {
+    let cep = document.getElementById('cep').value 
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+.then(resposta => resposta.json())
+.then(resultado => console.log(resultado))
+.catch((erro) => {
+    console.log(erro.type);
+})
 }
 
-let botaoDeletar = document.getElementById('btnDeletar')
 
-botaoDeletar.addEventListener('click',()=>{
-    let id = document.getElementById('id_del').value
-    localStorage.removeItem(id)
+    
 
-    let div = document.getElementById('resultadoDelete')
-    div.innerHTML = `O usuário de ID ${id} foi removido!!`
 
-})
+
+// function buscarUsuario(){
+//     let id = document.getElementById('id').value
+
+//     let usuarioJSON = localStorage.getItem(id)
+
+//     let usuarioOBJ = JSON.parse(usuarioJSON)
+
+//     console.log(usuarioOBJ)
+
+//     let div = document.getElementById('resultadoBusca')
+//     try{
+//         div.innerHTML = `
+//     <h2>Resultado da busca </h2>
+//     <h3>Nome: ${usuarioOBJ.nome} </h3>
+//     <h3>CPF: ${usuarioOBJ.cpf} </h3>
+//     `
+//     }catch (erro){
+//         div.innerHTML = `
+//         Esse ID não pertence a nenhum usuário!!
+//     `
+//     }
+    
+// }
+
+// let botaoDeletar = document.getElementById('btnDeletar')
+
+// botaoDeletar.addEventListener('click',()=>{
+//     let id = document.getElementById('id_del').value
+//     localStorage.removeItem(id)
+
+//     let div = document.getElementById('resultadoDelete')
+//     div.innerHTML = `O usuário de ID ${id} foi removido!!`
+
+// })
 
 
 </script>
