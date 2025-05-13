@@ -9,7 +9,7 @@ import Saudacao from './components/Saudacao'
 
 
 function App() {
-  let pessoas = [{name:'Rodrigo', idade: 20},{name:'rafael',idade: 29},{name:'Ana',idade: 30},{name:'diogo',idade: 18}]
+  let pessoas = [{name:'Rodrigo', idade: 20},{name:'rafael',idade: 29},{name:'Ana',idade: 30},{name:'diogo',idade: 18},{name:'tallys', idade:14}]
 
   
   
