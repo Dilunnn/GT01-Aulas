@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade localstore</title>
+</head>
+<body>
+    <h1>Cadastrar Aluno</h1>
+    <label for="matricula">Matrícula:</label> <br>
+    <input type="text" id="matricula" name="matricula"> <br>
+
+    <label for="nome">Nome:</label> <br>
+    <input type="text" id="nome" name="nome"> <br>
+
+    <label for="idade">idade:</label> <br>
+    <input type="text" id="idade" name="idade"> <br>
+
+    <label for="nota_portugues">Nota Português:</label> <br>
+    <input type="text" id="nota_portugues" name="nota_portugues"> <br>
+
+    <label for="nota_matematica">Nota matemática:</label> <br>
+    <input type="text" id="nota_matematica" name="nota_matematica"> <br> <br>
+
+    <button id="cadastro">Cadastrar</button>
+
+    <hr>
+    <h2>Buscar Aluno</h2> 
+    <label for="matricula_busca">Matricula</label> <br>
+    <input type="text" id="matricula_busca" name="matricula_busca"> <br> <br>
+    <button id="btnbuscar">Buscar</button> 
+
+    <div id="resultado_busca"></div>
+
+</body>
+<script>
+    let botao =  document.getElementById('cadastro')
+    let buscar = document.getElementById('btnbuscar')
+    
+    botao.addEventListener('click', () => {
+        let matricula = document.getElementById('matricula').value
+        let nome = document.getElementById('nome').value
+        let idade = document.getElementById('idade').value
+        let nota_portugues = document.getElementById('nota_portugues').value
+        let nota_matematica = document.getElementById('nota_matematica').value
+        let media = (Number(nota_portugues) + Number(nota_matematica)) / 2
+                
+        let aluno = {
+            Matricula:matricula,
+            Nome:nome,
+            Idade:idade,
+            nota_portugues:nota_portugues,
+            nota_matematica:nota_matematica,
+            media:media
+        }
+        
+        aluno = JSON.stringify(aluno)
+        
+        
+        localStorage.setItem(matricula,aluno)
+        
+        
+    })
+
+    buscar.addEventListener('click', () => {
+        
+        
+        try {
+                let div = document.getElementById('resultado_busca')
+            let matricula_buscar = document.getElementById('matricula_busca').value
+
+            let alunoJSON = localStorage.getItem(matricula_buscar)
+            let alunoOBJ = JSON.parse(alunoJSON)
+            div.innerHTML = `
+                    <h2>Resultado da busca de matrícula ${matricula_buscar}.</h2>
+                    <h3>Nome: ${alunoOBJ.Nome}</h3>
+                    <h3>Idade: ${alunoOBJ.Idade}</h3>
+                    <h3>Média: ${alunoOBJ.media}</h3>
+                    `
+                    console.log(alunoOBJ);
+        } catch (error) {
+            alert(` Matricula não existe`)
+        }
+        
+
+        
+        
+
+        
+    })
+
+
+
+
+</script>
+</html>
