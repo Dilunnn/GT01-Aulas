@@ -7,7 +7,7 @@
 
 
   color-scheme: light dark;
-  color: 255,255,0.87;
+
 }
 
 body {
@@ -16,17 +16,7 @@ body {
   min-height: 100vh;
   margin-bottom: 500px;
   background-color: white;
+  color: black;
 }
 
-h1 {
-  color: red;
-}
-p{
-  background-color: black;
-  color: green;
-  padding: 20px;
-}
 
-.paragrafo2{
-  color: red;
-}
