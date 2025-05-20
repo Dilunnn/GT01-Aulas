@@ -20,7 +20,10 @@ function App() {
     });
 
     setLogado(autenticado);
+    
+    
   }
+  
 
   return (
     <>
