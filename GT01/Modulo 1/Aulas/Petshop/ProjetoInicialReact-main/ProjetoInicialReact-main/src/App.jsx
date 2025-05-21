@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar'
 import { BrowserRouter } from 'react-router-dom'
 import AppRoutes from './routes/AppRoutes'
 import { UserProvider } from './contexts/UserContext'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -15,6 +14,7 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <AppRoutes/>
+        <Footer/>
       </BrowserRouter>
       
     </UserProvider>
