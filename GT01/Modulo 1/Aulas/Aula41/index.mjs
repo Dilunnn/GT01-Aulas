@@ -31,6 +31,19 @@ conexao.connect((erro) => {
     }
 })
 
+app.get('/usuariosEscola', (req,res) => {
+    let sql = 'select * from usuarios'
+    conexao.query(sql, (erro,resultado) => {
+        if (erro) {
+            console.log(`Erro ao realizar a consulta: ${erro}`);
+            return res.send(erro)
+        } else {
+            console.log(resultado);
+            return res.send(resultado)
+            
+        }
+    })
+})
 
 
 let usuarios = [
