@@ -8,7 +8,7 @@ app.use(express.json())
 
 
 app.get('/', (req,res) => {
-    res.send('Olá mundo ')
+    res.send('<h1>Olá mundo</h1>')
 })
 
 
@@ -16,8 +16,8 @@ app.get('/', (req,res) => {
 const conexao = mysql.createConnection({
     host: 'localhost',
     user:'root',
-    password:'1234',
-    database:'escola'
+    password:'12345',
+    database:'escola1'
 })
 
 // Rotas com banco de dados
@@ -104,5 +104,7 @@ app.delete('/deletarUsuario/:id', (req,res) => {
 
 app.listen(porta,() => {
     console.log(`Servidor rodando na porta ${porta}`);
+    console.log(`Entre por esse link: http://localhost:${porta}`);
+    
     
 })
