@@ -2,3 +2,5 @@ SELECT usuarios.nome, disciplinas.nome FROM usuarios JOIN professores ON usuario
 
 use escola;
  SELECT * from disciplinas;
+
+SELECT * FROM usuarios;
