@@ -11,7 +11,7 @@ tipo: texto com os valores possíveis:
 */
 
 create database escola1;
-use escola1;
+use escola;
 
 CREATE Table usuarios (
     id int PRIMARY key AUTO_INCREMENT,

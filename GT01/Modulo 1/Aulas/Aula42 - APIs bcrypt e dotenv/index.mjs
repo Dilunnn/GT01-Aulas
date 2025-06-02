@@ -1,16 +1,18 @@
 import express from 'express'
 import mysql from 'mysql2'
+import dotenv from 'dotenv'
 
+dotenv.config()
 const app = express()
-const porta = 3000
+const porta = process.env.DB_PORTA
 app.use(express.json())
 
 // Conexão com o MySql
 const conexao = mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'1234',
-    database:'escola'
+    host:process.env.DB_HOST,
+    user:process.env.DB_USER,
+    password:process.env.DB_PASSWORD,
+    database:process.env.DB_NAME
 })
 
 // Rotas com banco de dados
@@ -99,6 +101,9 @@ app.listen(porta,() => {
 
 
 
+
+
+
 /*
 Questão: Crie uma API RESTful para Gerenciar Alunos e suas Matrículas
 
@@ -126,4 +131,46 @@ use o ON DELETE CASCADE já definido no banco para excluir também o respectivo 
 
 */
 
+// part 2
+
+// Questão: Crie uma API RESTful para Gerenciar Alunos e suas Matrículas
+
+
+app.get('/disciplinasProfessores',(req,res) => {
+    let sql = 'SELECT usuarios.nome, disciplinas.nome FROM usuarios JOIN professores ON usuarios.id = professores.usuario_id JOIN disciplinas on disciplinas.professor_id = professores.id;'
+
+    conexao.query(sql,(erro,resp) => {
+        if (erro){
+            console.log(erro);
+        } else {
+            console.log(resp);
+            return res.json(resp)
+            
+        }
+    })
+})
+
+
+
+// Crie uma rota GET em /alunosComTurma que retorne todos os alunos com as seguintes informações:
+
+// nome completo do aluno (campo nome da tabela usuarios)
+// matrícula
+// data de nascimento
+// nome da turma
+
+
+// Crie uma rota POST em /cadastrarAluno que:
+
+// insira o usuário na tabela usuarios com tipo = 'aluno'
+// insira os dados do aluno na tabela alunos (relacionando com usuario_id recém-criado)
+
+
+// Crie uma rota PUT em /atualizarAluno/:id que atualize a matrícula e o nome do aluno (nas tabelas usuarios e alunos), usando o id da tabela alunos.
+
+// Crie uma rota DELETE em /deletarAluno/:id que:
+
+// delete o aluno pela tabela alunos
+
+// use o ON DELETE CASCADE já definido no banco para excluir também o respectivo usuario e quaisquer matriculas_disciplinas associadas
 
