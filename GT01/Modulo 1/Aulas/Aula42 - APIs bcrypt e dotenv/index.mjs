@@ -43,18 +43,22 @@ app.get('/usuariosEscola/:id',(req,res) => {
 })
 
 
-let usuarios = [
-    {id:'1',nome:'Maria', ativo:true},
-    {id:'2',nome:'João', ativo:true},
-    {id:'3',nome:'Pedro', ativo:false}
-]
 
 app.get('/',(req,res) => {
     res.send('Olá mundo')
 })
 
 app.get('/usuarios',(req,res)=>{
-    res.json(usuarios)
+    
+    let sql = 'SELECT * FROM usuarios'
+    conexao.query(sql, (erro, resultado) => {
+        if (erro) {
+            console.log(`Erro ao buscar usuários: ${erro}`)
+            return res.status(500).send('Erro ao buscar usuários')
+        } else {
+            return res.send(resultado)
+        }
+    })
 })
 
 app.get('/usuarios/:id',(req,res) => {
