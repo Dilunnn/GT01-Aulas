@@ -33,20 +33,96 @@ try{
 }catch(e){
     console.log(e)
 }
+
+// Definição dos módulos
+const Alunos = sequelize.define('Alunos', {
+    id:{
+        type:DataTypes.INTEGER,
+        primaryKey:true,
+        autoIncrement:true,
+    },
+    usuario_id:{
+        type:DataTypes.INTEGER,
+        unique:true,
+        references: {model:'Usuarios', key:'id'},
+        onDelete:'CASCADE' /*SET NULL se quiser (não quero)*/
+    },
+    matricula:{
+        type:DataTypes.STRING,
+        allowNull: false,
+        unique:true
+    }, 
+    data_nascimento:{
+        type:DataTypes.DATEONLY
+    },
+    turma_id:{
+        type:DataTypes.INTEGER,
+        references:{model:'Turmas', key:'id'},
+        onDelete:'CASCADE'
+    }
+})
+
+const Usuarios = sequelize.define('Usuarios', {
+    id:{
+        type:DataTypes.INTEGER,
+        primaryKey:true,
+        autoIncrement:true,
+    },
+    username:{
+        type:DataTypes.STRING,
+        unique:true,
+        allowNull:false
+    },
+    senha:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    nome:{
+        type: DataTypes.STRING,
+        allowNull:false
+    },
+    ativo:{
+        type: DataTypes.BOOLEAN,
+        defaultValue: true
+    },
+    tipo:{
+        type: DataTypes.ENUM('admin','aluno','professor')
+    }
+})
+
+const Turmas = sequelize.define('Turmas', {
+    id:{
+        type:DataTypes.INTEGER,
+        primaryKey:true,
+        autoIncrement:true
+    },
+    nome:{
+        type:DataTypes.STRING
+    },
+    ano:{
+        type:DataTypes.INTEGER
+    }
+})
+
+
+
 // Instanciar o express e criar a porta
 
 const app = express()
-const porta = process.env.NODE_PORTA
+const porta = process.env.DB_Porta
 
 // Trabalhar com os dados em json
 app.use(express.json())
 
-app.get('/',(req,res) => {
-    return res.send('API inicial')
+app.get('/', async (req,res) => {
+    let alunos = await Alunos.findAll()
+
+    return res.send(alunos)
 })
 
 
 
 app.listen(porta,()=>{
     console.log(`Servidor rodando na porta ${porta}`)
+    
 })

@@ -9,7 +9,7 @@
   "devDependencies": {
     "nodemon": "^3.1.10"
   },
-  "name": "aula43---apis-e-sequelize",
+  "name": "aula44---apis-e-sequelize",
   "version": "1.0.0",
   "main": "index.mjs",
   "scripts": {
