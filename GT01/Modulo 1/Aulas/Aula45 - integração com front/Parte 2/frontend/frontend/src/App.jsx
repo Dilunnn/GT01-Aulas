@@ -1,37 +1,43 @@
-import { useState, useEffect } from 'react'
+
+import { useState } from 'react'
 import './App.css'
+import TodosUser from './Components/TodosUser'
 
 function App() {
+  const [Mostrar, setMostrar] = useState(false) 
+  const [Id,setId] = useState('')
+  const [dadosuser,setdadosuser] = useState()
+  const [mostraruser,setmostraruser] = useState(false)
 
-  let [usuarios,setusuarios] = useState([])
+ async function buscarUsuario() {
+    const resposta = await fetch(`http://localhost:3000/usuarios/${Id}`)
 
-  useEffect(() => {
-    const buscarUsuario = async () => {
-      try {
-        const resposta = await fetch('http://localhost:3000/usuarios')
-        const dados = await resposta.json()
-        setusuarios(dados)
-        console.log(dados)
-        
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    buscarUsuario()
-  },[])
-  
+    const dados = await resposta.json()
+    setdadosuser(dados)
+    setmostraruser(true) 
+  }
 
-
-
+  function mostrarUsuarios(){
+   if(Mostrar) {
+    setMostrar(false)
+   } else{
+    setMostrar(true)
+   }
+  }
 
   return (
     <>
-     <h1>Aqui está a lista de usuários</h1>
-     <ul>
-      {usuarios.map(usuarios => (
-        <li key={usuarios.id}>Nome: {usuarios.nome}, tipo: {usuarios.tipo}</li>
-      ))}
-     </ul>
+    <h1>Selecione uma opção</h1>
+    <button onClick={mostrarUsuarios}>Todos os users</button>
+
+    <h2>Digite o id do usuario</h2>
+    <input type="text" onChange={e => setId(e.target.value)} />
+
+    <button onClick={buscarUsuario}>Buscar usuario</button>
+
+    {Mostrar ? <TodosUser/> : '' }
+    {mostraruser ? dadosuser.nome : ''}
+     
     </>
   )
 }

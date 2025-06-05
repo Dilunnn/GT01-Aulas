@@ -57,6 +57,19 @@ app.get('/usuarios', (req,res) => {
     })
 })
 
+app.get('/usuarios/:id', (req,res) => {
+    let id = req.params.id
+    let sql = `Select * from usuarios where id = ${id}`
+
+    conexao.query(sql,(er,result) => {
+         try {
+            return res.json(result)
+        } catch (error) {
+            console.log(`deu erro olha: ${error,er}`);
+        }
+    })
+})
+
 app.listen(Porta, () => {
     console.log(`Servidor rodando na porta: ${Porta}`);
     
