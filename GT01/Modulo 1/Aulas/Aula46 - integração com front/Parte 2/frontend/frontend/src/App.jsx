@@ -3,6 +3,7 @@ import './App.css'
 import TodosUser from './components/TodosUser'
 import UserEspecifico from './Components/UserEspecifico'
 import CadastroUsuario from './Components/CadastroUsuario'
+import TodosProf from './Components/TodosProf'
 
 function App() {
   let [mostrar,setMostrar] = useState(false)
@@ -19,6 +20,7 @@ function App() {
 
       <button onClick={() => {setComponente('todos')}}>Todos os Usuarios</button>
       <button onClick={() => {setComponente('um')}}>Exibir usuario</button>
+      <button onClick={() => {setComponente('umProf')}}>Exibir Professores</button>
       <button onClick={() => {setComponente('cadastrar')}}>Cadastrar usuario</button>
       <button onClick={() => {setComponente('atualizar')}}>atualizar dados</button>
       <button onClick={() => {setComponente('deletar')}}>Deletar usuario</button>
@@ -29,9 +31,13 @@ function App() {
         {componente == 'todos' && <TodosUser/>}
         {componente == 'um' && <UserEspecifico/>}
         {componente == 'cadastrar' && <CadastroUsuario/>}
+        {componente == 'umProf' && <TodosProf/>}
       </div>
 
-      
+       {/* Crie um componente para listar todos os professores */}
+        {/* Crie um componente para cadastrar um aluno */}
+        {/* Crie um componente para cadastrar um professor */}
+
 
     </>
   )

@@ -57,6 +57,18 @@ app.get('/usuarios', (req,res) => {
     })
 })
 
+app.get('/professores',(req,res) => {
+    let sql = "select * from usuarios where tipo = 'professor' "
+    conexao.query(sql,(er,result) => {
+        try {
+            return res.json(result)
+        } catch (error) {
+            console.log(error);
+            console.log(er);
+        }
+    })
+})
+
 app.get('/usuarios/:id', (req,res) => {
     let id = req.params.id
     let sql = `Select * from usuarios where id = ${id}`
