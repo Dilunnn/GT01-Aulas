@@ -1,42 +1,35 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import TodosUser from './components/TodosUser'
+import UserEspecifico from './Components/UserEspecifico'
 
 function App() {
   let [mostrar,setMostrar] = useState(false)
   let [id,setId] = useState('')
   let [dadosUser, setDadosUser] = useState({nome:""})
 
-  let [mostrarUser,setMostrarUser] = useState(false)
+  let [componente,setComponente] = useState()
 
-  function mostrarUsuarios(){
-    if(mostrar){
-      setMostrar(false)
-    }else{
-      setMostrar(true)
-    }
-  }
 
-  async function buscarUsuario(){
-    const resposta = await fetch(`http://localhost:3000/usuarios/${id}`)
-    const dados = await resposta.json()
-    setDadosUser(dados)
-    setMostrarUser(true)
-  }
 
   return (
     <>
       <h1>Selecione uma opção</h1>
-      <button onClick={mostrarUsuarios}>Todos os Usuarios</button>
-      <h2>Digite o id do usuario</h2>
 
-      <input onChange={e => setId(e.target.value)} type="text" />
+      <button onClick={() => {setComponente('todos')}}>Todos os Usuarios</button>
+      <button onClick={() => {setComponente('um')}}>Exibir usuario</button>
+      <button onClick={() => {setComponente('cadastrar')}}>Cadastrar usuario</button>
+      <button onClick={() => {setComponente('atualizar')}}>atualizar dados</button>
+      <button onClick={() => {setComponente('deletar')}}>Deletar usuario</button>
+      <button onClick={() => {setComponente('')}}>Limpar tela</button>
 
-      <button onClick={buscarUsuario} >Buscar Usuario</button>
 
-      {mostrar ? <TodosUser/>:''}
-      {dadosUser.nome}
-      {mostrarUser ? dadosUser.nome:''}
+      <div>
+        {componente == 'todos' && <TodosUser/>}
+        {componente == 'um' && <UserEspecifico/>}
+      </div>
+
+      
 
     </>
   )
