@@ -1,28 +1,32 @@
-import React, { useState } from 'react'
+import React, { useContext,useState } from 'react'
+import { UserContext } from '../contexts/UserContext'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
   let [email, setEmail] = useState()
   let [senha, setSenha] = useState()
-
+  let navigate = useNavigate()
+  let {user, setUser} = useContext(UserContext)
+  
   const fazerLogin = async (e) => {
     e.preventDefault();
     try {
 
-      const resposta = await fetch('http://localhost:3000/verificarlogin', { method: 'post', headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: email, senha: senha }) })
-      const dados = await resposta.json()
+      const resposta = await fetch('http://localhost:3000/verificarLogin', { method: 'POST', headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: email, senha: senha }) })
 
-      if (resposta.ok) {
-        console.log('login bem-sucedido:', dados);
-        localStorage.setItem('Token',dados.token)
-        localStorage.setItem('Usuario', JSON.stringify(dados.usuario))
-      } else {
-        console.log('Erro de login:',dados.erro);
-        
-      }
+      const dados = await resposta.json();
+        if (resposta.ok) {
+            console.log("Login bem-sucedido:", dados);
 
-      console(dados)
+            localStorage.setItem("token",dados.token)
+            localStorage.setItem("usuario",JSON.stringify(dados.usuario))
+            navigate('/perfil')
+
+        } else { 
+            console.warn("Erro de login:", dados.erro);
+        }
     } catch (error) {
-
+      console.log(error)
     }
   }
 
@@ -45,6 +49,7 @@ const Home = () => {
           </form>
         </div>
       </div>
+      
     </>
   )
 }

@@ -57,30 +57,33 @@ app.post('/verificarLogin', (req,res) => {
             return res.status(500).json({erro: "Erro no servidor"})
         }
 
-        const usuario = resultado[0]
-        console.log(usuario)
-
-        //const token = jwt.sign({dados},senha,{opcoes})
-        const token = jwt.sign({
-            id:usuario.id,
-            nome:usuario.nome,
-            tipo:usuario.tipo_usuario
-        },senhaJWT,
-        {
-            expiresIn:'1h'
-        })
-
         if(resultado.length > 0){
+            
+            const usuario = resultado[0]
+            console.log(usuario)
+
+            //const token = jwt.sign({dados},senha,{opcoes})
+            const token = jwt.sign({
+                id:usuario.id,
+                nome:usuario.nome,
+                tipo:usuario.tipo_usuario
+            },senhaJWT,
+            {
+                expiresIn:'1h'
+            })
+
+
+
             resultado = resultado[0]
             console.log('Resultado encontrado')
-            
+
             return res.status(200).json({token,usuario:{
                 id:usuario.id,
                 nome:usuario.nome,
                 tipo:usuario.tipo_usuario
             }})
         }else{
-            return res.status(401)
+            return res.status(401).json({erro:'erro'})
         }
     })
 })
