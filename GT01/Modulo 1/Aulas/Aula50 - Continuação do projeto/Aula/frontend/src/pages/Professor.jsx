@@ -9,9 +9,14 @@ const Professor = () => {
 
     let [tela, setTela] = useState()
     let [turmaSelecionada, setTurmaSelecionada] = useState(false)
-    let [turma, setTurma] = useState()
+    let [turma, setTurma] = useState([])
     let [alunos, setAlunos] = useState()
     console.log(tela)
+
+    function CarregarTurmas() {
+      const id_prof = JSON.parse(localStorage.getItem('usuario')).id
+
+    }
 
     async function lancarNotas(){
       const id_prof = JSON.parse(localStorage.getItem('usuario')).id
@@ -28,13 +33,22 @@ const Professor = () => {
 
 
 
+
   return (
     <div>
         <h1 className='text-center'>Painel do Professor</h1>
         <div className='text-center mt-5'>
 
           <h3>Selecione Sua turma</h3>
-          <input onChange={(e) => setTurma(e.target.value)} type="text" id='turma' name='turma'/>
+          
+
+          <select onChange={e => setTurma(e.target.value)} id='turma' name='turma' >
+            <option value="">--Selecione a turma--</option>
+            {turma.map((turmas) => {
+                <option value={turmas.id}>{turmas.nome}</option>
+            })}
+          </select>
+          <br /><br />
 
           <button onClick={() => setTurmaSelecionada(true)} className='btn btn-dark'>Selecionar</button>
 
@@ -56,6 +70,8 @@ const Professor = () => {
           Selecione um opção acima
         </div>)
         }
+
+        
 
         {tela == 'freq' && (
           <div style={{width:'70%',margin:'10px auto'}}>
