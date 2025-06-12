@@ -20,8 +20,8 @@ import mysql from 'mysql2'
 const conexao = mysql.createConnection({
     host: 'localhost',
     user:'root',
-    password:'1234',
-    database:'escola'
+    password:'12345',
+    database:'escola1'
 })
 
 // Rotas com banco de dados
