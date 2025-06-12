@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 
 const Professor = () => {
@@ -7,13 +7,24 @@ const Professor = () => {
     console.log(professor)
 
     let [tela, setTela] = useState()
+    let [turma,setturma] = useState()
+    let [TurmaSelecionada,setTurmaSelecionada] = useState(false)
+    
+    
 
 
   return (
     <div>
         <h1 className='text-center'>Painel do Professor</h1>
         <div className='text-center mt-5'>
-          <button className='btn btn-primary me-4'>Lançar Notas</button>
+
+          <h3>Selecione Sua turma</h3>
+          <br />
+          <input onChange={(e) => {setturma(e.target.value)} } type="text" id='turma' name='turma' />
+          <button onClick={() => setTurmaSelecionada(true)}>Selecionar</button>
+      
+           <br /> <br />
+          <button onClick={()=>setTela('notas')} className='btn btn-primary me-4'>Lançar Notas</button>
           <button onClick={()=>setTela('freq')} className='btn btn-success'>Lançar Frequência</button>
         </div>
         {!tela && 
@@ -23,7 +34,7 @@ const Professor = () => {
         }
 
         {tela == 'freq' && (
-          <div>
+          <div style={{width: '70%', margin: '10px auto'}}>
             <h2>Lançamento de frequencia</h2>
 
             <div className='d-flex p-4'>
@@ -47,6 +58,20 @@ const Professor = () => {
           </div>
         )}
 
+        {tela == 'notas' && (
+          <div style={{width: '70%', margin: '10px auto'}}>
+            <h2>Local das notas</h2>
+            <div className='d-flex p-4'>
+              <div style={{width:'300px'}}>
+              <span>João Silva</span>
+              </div>
+              <div>
+                <input type="number" min={0} max={10} step={0.1} />
+              </div>
+            </div>
+            <button className='btn btn-success w-100'>Salvar Frequência</button>
+          </div>
+        )}
 
         
 
