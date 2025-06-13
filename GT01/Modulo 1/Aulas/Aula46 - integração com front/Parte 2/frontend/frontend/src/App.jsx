@@ -34,6 +34,7 @@ function App() {
         {componente == 'umProf' && <TodosProf/>}
       </div>
 
+       {/* Crie um componente para listar todos os professores */}
         {/* Crie um componente para cadastrar um aluno */}
         {/* Crie um componente para cadastrar um professor */}
 
