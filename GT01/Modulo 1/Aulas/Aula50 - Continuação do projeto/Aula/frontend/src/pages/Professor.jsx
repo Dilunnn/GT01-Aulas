@@ -1,36 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 const Professor = () => {
 
     const professor = JSON.parse(localStorage.getItem('usuario'))
     console.log(professor)
 
-    const [turmas, setTurmas] = useState([])
-    const [turma_id, setTurma_id] = useState("")           
-    const [turmaSelecionada, setTurmaSelecionada] = useState(false) 
-    const [tela, setTela] = useState()
-    const [alunos, setAlunos] = useState()
-
-    useEffect(() => {
-      CarregarTurmas()
-    },[])
-
+    let [tela, setTela] = useState()
+    let [turmaSelecionada, setTurmaSelecionada] = useState(false)
+    let [turma, setTurma] = useState()
+    let [alunos, setAlunos] = useState()
     console.log(tela)
-
-    async function CarregarTurmas() {
-      const id_prof = JSON.parse(localStorage.getItem('usuario')).id
-      const resp = await fetch(`http://localhost:3000/listarturmas/${id_prof}`)
-      const turmas = await resp.json()
-      console.log(turmas);
-      setTurmas(turmas)
-      
-
-    }
 
     async function lancarNotas(){
       const id_prof = JSON.parse(localStorage.getItem('usuario')).id
       console.log(id_prof)
-      const resp = await fetch(`http://localhost:3000/trazerAlunos/${id_prof}/${turma_id}`)
+      const resp = await fetch(`http://localhost:3000/trazerAlunos/${id_prof}/${turma}`)
 
       const dados = await resp.json()
 
@@ -39,29 +25,18 @@ const Professor = () => {
       setTela('notas')
     }
 
-    
-
 
 
 
   return (
-  
     <div>
         <h1 className='text-center'>Painel do Professor</h1>
         <div className='text-center mt-5'>
 
           <h3>Selecione Sua turma</h3>
-          
+          <input onChange={(e) => setTurma(e.target.value)} type="text" id='turma' name='turma'/>
 
-          <select onChange={e => setTurma_id(e.target.value)} value={turma_id}>
-            <option value="">--Selecione a turma--</option>
-            {turmas.map(turma => (
-              <option key={turma.id} value={turma.id}>{turma.nome}</option>
-            ))}
-          </select>
-          <br /><br />
-
-          <button onClick={() => setTurmaSelecionada(true)} className="btn btn-dark" disabled={!turma_id}> Selecionar </button>
+          <button onClick={() => setTurmaSelecionada(true)} className='btn btn-dark'>Selecionar</button>
 
           <br />
           <br />
@@ -81,8 +56,6 @@ const Professor = () => {
           Selecione um opção acima
         </div>)
         }
-
-        
 
         {tela == 'freq' && (
           <div style={{width:'70%',margin:'10px auto'}}>
