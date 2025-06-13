@@ -136,6 +136,32 @@ WHERE Professores_Disciplinas.professor_id = ${id_prof}
   })
 })
 
+app.get('/listarturmas/:id_prof', (req,res) => {
+    let id_prof = req.params.id_prof
+    let sql = `SELECT Turmas.id, Turmas.nome
+               FROM Turmas
+               JOIN Professores_Disciplinas ON Turmas.id = Professores_Disciplinas.disciplina_id
+               WHERE Professores_Disciplinas.professor_id = ${id_prof};`
+    
+
+    if(id_prof == 0) {
+        return res.send('Esperando id valido do Professor')
+    } else {
+       conexao.query(sql,(er, resposta) => {
+        if (er) {
+            return res.send(er)
+            console.log(er);
+        } else {
+            return res.send(resposta)
+            console.log(resposta);
+            
+        }
+    }) 
+    }
+    
+
+})
+
 
 app.listen(porta, () => {
     console.log(`O servidor está rodando na porta ${porta}`)
