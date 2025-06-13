@@ -31,7 +31,7 @@ const porta = 3000;
 const conexao = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "1234",
+  password: "12345",
   database: "sistema_gestao_escolar",
 });
 
